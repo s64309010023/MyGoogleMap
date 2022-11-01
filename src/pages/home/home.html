@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      หาเส้นทางระหว่างเมือง
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <div id="floating-panel">
+    <b>Start: </b>
+    <select [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()">
+      <option value="Muang Pattani">ปัตตานี</option>
+      <option value="Khok Pho">โคกโพธิ์</option>
+      <option value="Nong Chik">หนองจิก</option>
+      <option value="Panare">ปะนาเระ</option>
+      <option value="Mayo">มายอ</option>
+      <option value="Thung Yang Daeng">ทุ่งยางแดง</option>
+      <option value="Sai Buri">สายบุรี</option>
+      <option value="Mai Kaen">ไม้แก่น</option>
+      <option value="Yaring">ยะหริ่ง</option>
+      <option value="Yarang">ยะรัง</option>
+      <option value="Kapho">กะพ้อ</option>
+      <option value="Maelan">แม่ลาน</option>
+    </select><br>
+    <b>End: </b>
+    <select [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()">
+      <option value="Muang Pattani">ปัตตานี</option>
+      <option value="Khok Pho">โคกโพธิ์</option>
+      <option value="nong Chik">หนองจิก</option>
+      <option value="Panare">ปะนาเระ</option>
+      <option value="Mayo">มายอ</option>
+      <option value="Thung Yang Daeng">ทุ่งยางแดง</option>
+      <option value="Sai Buri">สายบุรี</option>
+      <option value="Mai Kaen">ไม้แก่น</option>
+      <option value="Yaring">ยะหริ่ง</option>
+      <option value="Yarang">ยะรัง</option>
+      <option value="Kapho">กะพ้อ</option>
+      <option value="Maelan">แม่ลาน</option>
+    </select>
+    </div>
+    <div #map id="map"></div>
 </ion-content>
